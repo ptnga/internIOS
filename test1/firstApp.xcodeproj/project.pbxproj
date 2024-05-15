@@ -10,6 +10,7 @@
 		180A3F132BF22E4B00593B84 /* View4Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A3F122BF22E4B00593B84 /* View4Controller.swift */; };
 		1828268B2BF31D5A00497A6C /* uiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1828268A2BF31D5A00497A6C /* uiView.swift */; };
 		1828268D2BF36D3500497A6C /* customCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1828268C2BF36D3500497A6C /* customCell.swift */; };
+		182826912BF460EF00497A6C /* startConversationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182826902BF460EF00497A6C /* startConversationController.swift */; };
 		1848F3752BEB6AC7004827FA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848F3742BEB6AC7004827FA /* FirstViewController.swift */; };
 		1848F3772BEB7308004827FA /* uiColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848F3762BEB7308004827FA /* uiColor.swift */; };
 		1848F3792BEB798D004827FA /* View3Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848F3782BEB798D004827FA /* View3Controller.swift */; };
@@ -45,6 +46,7 @@
 		180A3F122BF22E4B00593B84 /* View4Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View4Controller.swift; sourceTree = "<group>"; };
 		1828268A2BF31D5A00497A6C /* uiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiView.swift; sourceTree = "<group>"; };
 		1828268C2BF36D3500497A6C /* customCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customCell.swift; sourceTree = "<group>"; };
+		182826902BF460EF00497A6C /* startConversationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startConversationController.swift; sourceTree = "<group>"; };
 		1848F3742BEB6AC7004827FA /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		1848F3762BEB7308004827FA /* uiColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiColor.swift; sourceTree = "<group>"; };
 		1848F3782BEB798D004827FA /* View3Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View3Controller.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				18593A162BE9E7F300FFDDE1 /* Info.plist */,
 				1848F3762BEB7308004827FA /* uiColor.swift */,
 				1828268A2BF31D5A00497A6C /* uiView.swift */,
+				182826902BF460EF00497A6C /* startConversationController.swift */,
 			);
 			path = firstApp;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1828268B2BF31D5A00497A6C /* uiView.swift in Sources */,
+				182826912BF460EF00497A6C /* startConversationController.swift in Sources */,
 				180A3F132BF22E4B00593B84 /* View4Controller.swift in Sources */,
 				18593A0D2BE9E7F100FFDDE1 /* ViewController.swift in Sources */,
 				18593A092BE9E7F100FFDDE1 /* AppDelegate.swift in Sources */,
