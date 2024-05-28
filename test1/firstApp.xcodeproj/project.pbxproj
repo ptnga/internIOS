@@ -11,9 +11,14 @@
 		1828268B2BF31D5A00497A6C /* uiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1828268A2BF31D5A00497A6C /* uiView.swift */; };
 		1828268D2BF36D3500497A6C /* customCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1828268C2BF36D3500497A6C /* customCell.swift */; };
 		182826912BF460EF00497A6C /* startConversationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182826902BF460EF00497A6C /* startConversationController.swift */; };
+		182826952BF75A2800497A6C /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 182826942BF75A2800497A6C /* users.json */; };
+		182826972BF75A3300497A6C /* chat.json in Resources */ = {isa = PBXBuildFile; fileRef = 182826962BF75A3300497A6C /* chat.json */; };
 		1848F3752BEB6AC7004827FA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848F3742BEB6AC7004827FA /* FirstViewController.swift */; };
 		1848F3772BEB7308004827FA /* uiColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848F3762BEB7308004827FA /* uiColor.swift */; };
 		1848F3792BEB798D004827FA /* View3Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848F3782BEB798D004827FA /* View3Controller.swift */; };
+		18547D202C058BB80045102D /* uiLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18547D1F2C058BB80045102D /* uiLabel.swift */; };
+		18547D222C058DF00045102D /* customCellStartChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18547D212C058DF00045102D /* customCellStartChat.swift */; };
+		18547D242C058F000045102D /* headerViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18547D232C058F000045102D /* headerViewSection.swift */; };
 		18593A092BE9E7F100FFDDE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18593A082BE9E7F100FFDDE1 /* AppDelegate.swift */; };
 		18593A0B2BE9E7F100FFDDE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18593A0A2BE9E7F100FFDDE1 /* SceneDelegate.swift */; };
 		18593A0D2BE9E7F100FFDDE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18593A0C2BE9E7F100FFDDE1 /* ViewController.swift */; };
@@ -47,9 +52,14 @@
 		1828268A2BF31D5A00497A6C /* uiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiView.swift; sourceTree = "<group>"; };
 		1828268C2BF36D3500497A6C /* customCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customCell.swift; sourceTree = "<group>"; };
 		182826902BF460EF00497A6C /* startConversationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startConversationController.swift; sourceTree = "<group>"; };
+		182826942BF75A2800497A6C /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = users.json; path = ../../../users.json; sourceTree = "<group>"; };
+		182826962BF75A3300497A6C /* chat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = chat.json; path = ../../../chat.json; sourceTree = "<group>"; };
 		1848F3742BEB6AC7004827FA /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		1848F3762BEB7308004827FA /* uiColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiColor.swift; sourceTree = "<group>"; };
 		1848F3782BEB798D004827FA /* View3Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View3Controller.swift; sourceTree = "<group>"; };
+		18547D1F2C058BB80045102D /* uiLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiLabel.swift; sourceTree = "<group>"; };
+		18547D212C058DF00045102D /* customCellStartChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customCellStartChat.swift; sourceTree = "<group>"; };
+		18547D232C058F000045102D /* headerViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerViewSection.swift; sourceTree = "<group>"; };
 		18593A052BE9E7F100FFDDE1 /* firstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18593A082BE9E7F100FFDDE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18593A0A2BE9E7F100FFDDE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +123,8 @@
 		18593A072BE9E7F100FFDDE1 /* firstApp */ = {
 			isa = PBXGroup;
 			children = (
+				182826962BF75A3300497A6C /* chat.json */,
+				182826942BF75A2800497A6C /* users.json */,
 				18593A082BE9E7F100FFDDE1 /* AppDelegate.swift */,
 				18593A0A2BE9E7F100FFDDE1 /* SceneDelegate.swift */,
 				1848F3742BEB6AC7004827FA /* FirstViewController.swift */,
@@ -120,13 +132,16 @@
 				1848F3782BEB798D004827FA /* View3Controller.swift */,
 				18593A0E2BE9E7F100FFDDE1 /* Main.storyboard */,
 				180A3F122BF22E4B00593B84 /* View4Controller.swift */,
+				182826902BF460EF00497A6C /* startConversationController.swift */,
 				1828268C2BF36D3500497A6C /* customCell.swift */,
+				18547D212C058DF00045102D /* customCellStartChat.swift */,
+				18547D232C058F000045102D /* headerViewSection.swift */,
 				18593A112BE9E7F300FFDDE1 /* Assets.xcassets */,
 				18593A132BE9E7F300FFDDE1 /* LaunchScreen.storyboard */,
 				18593A162BE9E7F300FFDDE1 /* Info.plist */,
 				1848F3762BEB7308004827FA /* uiColor.swift */,
 				1828268A2BF31D5A00497A6C /* uiView.swift */,
-				182826902BF460EF00497A6C /* startConversationController.swift */,
+				18547D1F2C058BB80045102D /* uiLabel.swift */,
 			);
 			path = firstApp;
 			sourceTree = "<group>";
@@ -252,6 +267,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				182826952BF75A2800497A6C /* users.json in Resources */,
+				182826972BF75A3300497A6C /* chat.json in Resources */,
 				18593A122BE9E7F300FFDDE1 /* Assets.xcassets in Resources */,
 				18593A152BE9E7F300FFDDE1 /* Base in Resources */,
 				18593A102BE9E7F100FFDDE1 /* Base in Resources */,
@@ -280,7 +297,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1828268B2BF31D5A00497A6C /* uiView.swift in Sources */,
+				18547D222C058DF00045102D /* customCellStartChat.swift in Sources */,
 				182826912BF460EF00497A6C /* startConversationController.swift in Sources */,
+				18547D202C058BB80045102D /* uiLabel.swift in Sources */,
+				18547D242C058F000045102D /* headerViewSection.swift in Sources */,
 				180A3F132BF22E4B00593B84 /* View4Controller.swift in Sources */,
 				18593A0D2BE9E7F100FFDDE1 /* ViewController.swift in Sources */,
 				18593A092BE9E7F100FFDDE1 /* AppDelegate.swift in Sources */,

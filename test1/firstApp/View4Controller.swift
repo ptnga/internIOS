@@ -26,7 +26,6 @@ class View4Controller: UIViewController, UITableViewDelegate, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = colorView
-        
         self.navigationItem.title = nil
         navigationController?.navigationBar.barTintColor = colorView
         
@@ -86,7 +85,10 @@ class View4Controller: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     @objc private func didTapButton(){
-        let vc = startConversationController()
-        navigationController?.pushViewController(vc, animated: true)
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "startConversation") as? startConversationController {
+            navigationController?.pushViewController(vc, animated: true)
+        }
+//        let vc = startConversationController()
+//        navigationController?.pushViewController(vc, animated: true)
     }
 }
