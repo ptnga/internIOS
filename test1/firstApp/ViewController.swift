@@ -1,33 +1,22 @@
-//
-//  ViewController.swift
-//  firstApp
-//
-//  Created by Bunn on 7/5/24.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
-    
-   
-   
+
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var button1: UIButton!
-    
-    let colorBT = UIColor(rgb: 0x536DFE, a: 1.0)
-    let colorView = UIColor(rgb: 0x303034, a: 1.0)
+    let colorBT = UIColor(rgb: 0x536DFE, alpha: 1.0)
+    let colorView = UIColor(rgb: 0x303034, alpha: 1.0)
 
     @IBAction func onPressedCall(_ sender: Any) {
-        guard let vc = storyboard?.instantiateViewController(identifier: "two") as? View3Controller else {
-            //identifier: định danh View3Controller
-            //hàm này cho phép xác định và khởi tạo config viewcontroller
+        guard let vc3 = storyboard?.instantiateViewController(identifier: "two") as? View3Controller else {
+            // identifier: định danh View3Controller
+            // hàm này cho phép xác định và khởi tạo config viewcontroller
             print("err")
             return
         }
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
-        
+        vc3.modalPresentationStyle = .fullScreen
+        present(vc3, animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,5 +36,3 @@ class ViewController: UIViewController {
     }
     
 }
-
-

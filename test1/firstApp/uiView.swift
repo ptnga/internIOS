@@ -11,7 +11,12 @@ extension UIView {
     func applyKerning(_ kernValue: CGFloat) {
         if let textView = self as? UITextView {
             let attributedString = NSMutableAttributedString(attributedString: textView.attributedText)
-            attributedString.addAttribute(.kern, value: kernValue, range: NSRange(location: 0, length: attributedString.length))
+            attributedString.addAttribute(
+                .kern, value: kernValue,
+                range: NSRange(
+                    location: 0,
+                    length: attributedString.length)
+            )
             textView.attributedText = attributedString
         }
         for subview in subviews {
