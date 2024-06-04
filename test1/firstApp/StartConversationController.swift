@@ -33,8 +33,8 @@ public final class UserModel {
 
 class StartConversationController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let colorView = UIColor(rgb: 0x303034, alpha: 1.0)
-    @IBOutlet weak var lbDash: UILabel!
     let colorDash = UIColor(rgb: 0x404245, alpha: 1.0)
+    @IBOutlet weak var lbDash: UILabel!
     @IBOutlet weak var tableNameChat: UITableView!
     var usersBySection: [String: [UserModel]] = [:]
     var positions: [String] = ["Dispatchers", "Drivers"]
@@ -50,6 +50,8 @@ class StartConversationController: UIViewController, UITableViewDelegate, UITabl
                 NSAttributedString.Key.font: UIFont(name: "AvenirNext-DemiBold", size: 20)!
                 ]
         }
+        let nib = UINib(nibName: "StartChatTableViewCell", bundle: nil)
+        tableNameChat.register(nib, forCellReuseIdentifier: "StartChatTableViewCell")
         self.tableNameChat.backgroundColor = colorView
         tableNameChat.reloadData()
 
@@ -80,5 +82,43 @@ class StartConversationController: UIViewController, UITableViewDelegate, UITabl
                     print( "Error reading JSON file: \( error ) " )
                 }
             }
+        }
+}
+extension StartConversationController {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return positions.count
+    }
+    func tableView( _ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return positions[section]
+    }
+    func tableView( _ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        let positionKey = positions[section]
+        return usersBySection[positionKey]?.count ?? 0
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StartChatTableViewCell", for: indexPath) as! StartChatTableViewCell
+        cell.backgroundColor = colorView
+        let position = positions[indexPath.section]
+        if let user = usersBySection[position]?[indexPath.row] {
+            cell.set(user: user)
+        }
+        return cell
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+            let headerView = UIView()
+            headerView.backgroundColor = colorView
+            let label = UILabel()
+            label.text = positions[section]
+            label.applyKerningLabel(1.3)
+            label.textColor = .white
+            label.font = UIFont(name: "AvenirNext-DemiBold", size: 20) ?? UIFont.systemFont(ofSize: 20, weight: .bold)
+            label.translatesAutoresizingMaskIntoConstraints = false
+            headerView.addSubview(label)
+            NSLayoutConstraint.activate([
+                label.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
+                label.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
+            ])
+            return headerView
         }
 }

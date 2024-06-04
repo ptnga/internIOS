@@ -1,7 +1,13 @@
-import Foundation
+//
+//  View4TableViewCell.swift
+//  firstApp
+//
+//  Created by Bunn on 4/6/24.
+//
+
 import UIKit
 
-class MyTableViewCell: UITableViewCell {
+class View4TableViewCell: UITableViewCell {
     @IBOutlet private weak var textViewName: UILabel!
     @IBOutlet private weak var textViewContent: UILabel!
     @IBOutlet private weak var textViewHour: UILabel!
@@ -9,11 +15,12 @@ class MyTableViewCell: UITableViewCell {
     @IBOutlet weak var position: UILabel!
     @IBOutlet weak var imageName: UILabel!
     @IBOutlet weak var lbDot: UILabel!
+    @IBOutlet weak var lbBorder: UILabel!
     let colorBackgroundImage = UIColor(rgb: 0xFAD6DA, alpha: 1.0)
     let colorBorder =  UIColor(rgb: 0x5DE64E, alpha: 1.0)
     let colorFont = UIColor(rgb: 0xE65154, alpha: 1.0)
     let colorView = UIColor(rgb: 0x303034, alpha: 1.0)
-    
+    let colorNotify = UIColor(rgb: 0xED6348, alpha: 1.0)
     override func awakeFromNib() {
         super.awakeFromNib()
         textViewName.translatesAutoresizingMaskIntoConstraints = false
@@ -36,17 +43,22 @@ class MyTableViewCell: UITableViewCell {
             position.centerYAnchor.constraint(equalTo: textViewName.centerYAnchor),
             position.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -16),
             textViewContent.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 97),
-            textViewContent.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 45),
+            textViewContent.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 48),
             textViewContent.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -40),
-            textViewContent.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -30),
+            textViewContent.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -49),
 //            labelNotify.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 351),
 //            labelNotify.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 42),
             textViewHour.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 97),
-             textViewHour.topAnchor.constraint(equalTo: textViewContent.bottomAnchor, constant: 10),
-            textViewHour.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
+             textViewHour.topAnchor.constraint(equalTo: textViewContent.bottomAnchor, constant: 4),
+            textViewHour.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -21)
         ])
     }
     public func set(user: ChatModel) {
+        lbBorder.layer.backgroundColor = nil
+        lbBorder.layer.borderColor = colorView.cgColor
+        lbBorder.layer.borderWidth = 1
+        lbBorder.layer.cornerRadius = lbBorder.frame.height/2
+        lbBorder.layer.masksToBounds = true
         imageName.text = user.nameImage
         imageName.applyKerningLabel(1.3)
         imageName.layer.cornerRadius = imageName.frame.height/2
@@ -76,12 +88,15 @@ class MyTableViewCell: UITableViewCell {
             textViewContent.textColor = UIColor.white
             lbDot.backgroundColor = UIColor.white
             lbDot.layer.borderColor = UIColor.white.cgColor
-            labelNotify.backgroundColor = .red
+            labelNotify.backgroundColor = colorNotify
             labelNotify.text = "\(user.numberNotify)"
             labelNotify.layer.cornerRadius = labelNotify.frame.height/2
             labelNotify.layer.masksToBounds = true
             labelNotify.layer.borderWidth = 1
-            labelNotify.layer.borderColor = UIColor.red.cgColor
+            labelNotify.layer.borderColor = colorNotify.cgColor
+        }
+        if(user.status == true) {
+            lbBorder.layer.borderColor = colorBorder.cgColor
         }
 
     }
@@ -93,33 +108,5 @@ class MyTableViewCell: UITableViewCell {
             dateFormatter.pmSymbol = "PM"
             return dateFormatter.string(from: date)
         }
-
-}
-extension View4Controller {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
-
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyTableViewCell
-        cell.backgroundColor = colorView
-        let user = users[indexPath.row]
-        cell.set(user: user)
-        return cell
-    }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            users.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-        }
-    }
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
-    }
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 300
-    }
+    
 }

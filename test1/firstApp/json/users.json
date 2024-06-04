@@ -1,0 +1,36 @@
+
+{
+	"data": {
+	"dispatchers": [
+	{
+	"username": "Erica Sanchez",
+	"position": "Dispatcher",
+	"status": 1
+	},
+	{
+	"username": "Jolie Mathis",
+	"position": "Dispatcher",
+	"status": 1
+	},
+	{
+	"username": "Abraham Dawson",
+	"position": "Dispatcher",
+	"status": 0
+	}],
+	"drivers": [
+	{
+	"username": "Erica Sanchez Driver",
+	"position": "Driver",
+	"status": 0
+	},
+	{
+	"username": "Jolie Mathis Driver",
+	"position": "Driver",
+	"status": 1
+	},
+	{
+	"username": "Abraham Dawson Driver",
+	"position": "Driver",
+	"status": 0
+	}]}
+}

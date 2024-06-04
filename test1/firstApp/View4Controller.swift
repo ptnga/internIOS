@@ -7,13 +7,15 @@ public final class ChatModel {
     var title: String
     var timestamp: Int
     var numberNotify: Int
-    init(nameImage: String, username: String, position: String, title: String, timestamp: Int, numberNotify: Int) {
+    var status: Bool
+    init(nameImage: String, username: String, position: String, title: String, timestamp: Int, numberNotify: Int, status: Bool) {
         self.nameImage = nameImage
         self.username = username
         self.position = position
         self.title = title
         self.timestamp = timestamp
         self.numberNotify = numberNotify
+        self.status = status
     }
     convenience init(json: [String: Any]) {
         let username = json["username"] as? String ?? ""
@@ -32,13 +34,23 @@ public final class ChatModel {
         let message = json["message"] as? String ?? ""
         let timestamp = (json["time"] as? Int ?? 0)
         let numberNotify = (json["numer_unread"] as? Int ?? 0)
+        let status = (json["status"] as? Int ?? 0) == 1
         
-        self.init(nameImage: nameImage, username: username, position: position, title: message, timestamp: timestamp, numberNotify: numberNotify)
+        self.init(
+            nameImage: nameImage,
+            username: username,
+            position: position,
+            title: message,
+            timestamp: timestamp,
+            numberNotify: numberNotify,
+            status: status
+        )
         }
 }
 class View4Controller: UIViewController, UITableViewDelegate, UITableViewDataSource {
      var users: [ChatModel] = []
     let colorView = UIColor(rgb: 0x303034, alpha: 1.0)
+    let colorDelete = UIColor(rgb: 0xED6348, alpha: 1.0)
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addButton: UIButton!
     override func viewDidLoad() {
@@ -75,7 +87,9 @@ class View4Controller: UIViewController, UITableViewDelegate, UITableViewDataSou
         self.navigationItem.rightBarButtonItem = rightButtonBar
         tableView.backgroundColor = colorView
         view.applyKerning(1)
-        tableView.estimatedRowHeight = 300
+        let nib = UINib(nibName: "View4TableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "View4TableViewCell")
+        tableView.estimatedRowHeight = 120
         tableView.rowHeight = UITableView.automaticDimension
         tableView.beginUpdates()
         tableView.endUpdates()
@@ -112,4 +126,45 @@ class View4Controller: UIViewController, UITableViewDelegate, UITableViewDataSou
                 }
             }
         }
+}
+extension View4Controller {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return users.count
+
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "View4TableViewCell", for: indexPath) as! View4TableViewCell
+        cell.backgroundColor = colorView
+        let user = users[indexPath.row]
+        cell.set(user: user)
+        return cell
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            users.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//        return .delete
+//    }
+    @available(iOS 11.0, *)
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (_, _, handler) in
+            // Xử lý khi nút delete được bấm
+            print("Delete")
+            handler(true)
+        }
+        // Tùy chỉnh màu nền của nút delete
+        deleteAction.backgroundColor = colorDelete
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        configuration.performsFirstActionWithFullSwipe = true
+        return configuration
+    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 120
+    }
 }

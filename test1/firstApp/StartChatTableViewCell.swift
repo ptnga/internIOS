@@ -1,8 +1,13 @@
-import Foundation
+//
+//  StartChatTableViewCell.swift
+//  firstApp
+//
+//  Created by Bunn on 4/6/24.
+//
+
 import UIKit
 
-class MyCellName: UITableViewCell {
-
+class StartChatTableViewCell: UITableViewCell {
     @IBOutlet weak var lbBorder: UILabel!
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbStatus: UILabel!
@@ -59,43 +64,5 @@ class MyCellName: UITableViewCell {
             lbStatus.layer.backgroundColor = UIColor.green.cgColor
         }
     }
-}
 
-extension StartConversationController {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return positions.count
-    }
-    func tableView( _ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return positions[section]
-    }
-    func tableView( _ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        let positionKey = positions[section]
-        return usersBySection[positionKey]?.count ?? 0
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellName", for: indexPath) as! MyCellName
-        cell.backgroundColor = colorView
-        let position = positions[indexPath.section]
-        if let user = usersBySection[position]?[indexPath.row] {
-            cell.set(user: user)
-        }
-        return cell
-    }
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-            let headerView = UIView()
-            headerView.backgroundColor = colorView
-            let label = UILabel()
-            label.text = positions[section]
-            label.applyKerningLabel(1.3)
-            label.textColor = .white
-            label.font = UIFont(name: "AvenirNext-DemiBold", size: 20) ?? UIFont.systemFont(ofSize: 20, weight: .bold)
-            label.translatesAutoresizingMaskIntoConstraints = false
-            headerView.addSubview(label)
-            NSLayoutConstraint.activate([
-                label.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
-                label.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
-            ])
-            return headerView
-        }
 }
