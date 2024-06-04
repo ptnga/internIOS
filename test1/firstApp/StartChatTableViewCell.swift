@@ -1,17 +1,10 @@
-//
-//  StartChatTableViewCell.swift
-//  firstApp
-//
-//  Created by Bunn on 4/6/24.
-//
-
 import UIKit
 
 class StartChatTableViewCell: UITableViewCell {
-    @IBOutlet weak var lbBorder: UILabel!
-    @IBOutlet weak var lbName: UILabel!
-    @IBOutlet weak var lbStatus: UILabel!
-    @IBOutlet weak var lbImage: UILabel!
+    @IBOutlet private weak var lbBorder: UILabel!
+    @IBOutlet private weak var lbName: UILabel!
+    @IBOutlet private weak var lbStatus: UILabel!
+    @IBOutlet private weak var lbImage: UILabel!
     let colorBackgroundImage = UIColor(rgb: 0xFAD6DA, alpha: 1.0)
     let colorBorder =  UIColor(rgb: 0x5DE64E, alpha: 1.0)
     let colorFont = UIColor(rgb: 0xE65154, alpha: 1.0)
@@ -26,7 +19,7 @@ class StartChatTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             // Constraint for lbName
             lbName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 97),
-            lbName.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            lbName.centerYAnchor.constraint(equalTo: lbImage.centerYAnchor),
             // Constraint for lbStatus
             lbStatus.leadingAnchor.constraint(equalTo: lbName.trailingAnchor, constant: 15),
             lbStatus.centerYAnchor.constraint(equalTo: lbName.centerYAnchor),
@@ -57,8 +50,10 @@ class StartChatTableViewCell: UITableViewCell {
         lbName.textColor = UIColor.white
         lbName.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         lbName.sizeToFit()
+        lbStatus.layer.isHidden = true
         lbStatus.sizeToFit()
         if(user.status == true) {
+            lbStatus.layer.isHidden = false
             lbBorder.layer.borderColor = colorBorder.cgColor
             lbStatus.layer.borderColor = UIColor.green.cgColor
             lbStatus.layer.backgroundColor = UIColor.green.cgColor

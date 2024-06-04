@@ -9,7 +9,7 @@ class ViewController: UIViewController {
     let colorView = UIColor(rgb: 0x303034, alpha: 1.0)
 
     @IBAction func onPressedCall(_ sender: Any) {
-        guard let vc3 = storyboard?.instantiateViewController(identifier: "two") as? View3Controller else {
+        guard let vc3 = storyboard?.instantiateViewController(identifier: "two") as? OnCallController else {
             // identifier: định danh View3Controller
             // hàm này cho phép xác định và khởi tạo config viewcontroller
             print("err")

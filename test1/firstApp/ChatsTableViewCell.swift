@@ -7,15 +7,15 @@
 
 import UIKit
 
-class View4TableViewCell: UITableViewCell {
+class ChatsTableViewCell: UITableViewCell {
     @IBOutlet private weak var textViewName: UILabel!
     @IBOutlet private weak var textViewContent: UILabel!
     @IBOutlet private weak var textViewHour: UILabel!
     @IBOutlet private weak var labelNotify: UILabel!
-    @IBOutlet weak var position: UILabel!
-    @IBOutlet weak var imageName: UILabel!
-    @IBOutlet weak var lbDot: UILabel!
-    @IBOutlet weak var lbBorder: UILabel!
+    @IBOutlet private weak var position: UILabel!
+    @IBOutlet private weak var imageName: UILabel!
+    @IBOutlet private weak var lbDot: UILabel!
+    @IBOutlet private weak var lbBorder: UILabel!
     let colorBackgroundImage = UIColor(rgb: 0xFAD6DA, alpha: 1.0)
     let colorBorder =  UIColor(rgb: 0x5DE64E, alpha: 1.0)
     let colorFont = UIColor(rgb: 0xE65154, alpha: 1.0)
@@ -46,8 +46,6 @@ class View4TableViewCell: UITableViewCell {
             textViewContent.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 48),
             textViewContent.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -40),
             textViewContent.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -49),
-//            labelNotify.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 351),
-//            labelNotify.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 42),
             textViewHour.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 97),
              textViewHour.topAnchor.constraint(equalTo: textViewContent.bottomAnchor, constant: 4),
             textViewHour.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -21)
@@ -79,6 +77,7 @@ class View4TableViewCell: UITableViewCell {
         textViewContent.text = user.title
         textViewContent.applyKerningLabel(1.3)
         textViewHour.text = formatTimestamp(user.timestamp)
+        labelNotify.layer.isHidden = true
         textViewName.sizeToFit()
         position.sizeToFit()
         if( user.numberNotify>0 ) {
@@ -88,6 +87,7 @@ class View4TableViewCell: UITableViewCell {
             textViewContent.textColor = UIColor.white
             lbDot.backgroundColor = UIColor.white
             lbDot.layer.borderColor = UIColor.white.cgColor
+            labelNotify.layer.isHidden = false
             labelNotify.backgroundColor = colorNotify
             labelNotify.text = "\(user.numberNotify)"
             labelNotify.layer.cornerRadius = labelNotify.frame.height/2

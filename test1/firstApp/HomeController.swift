@@ -2,12 +2,10 @@ import UIKit
 
 class FirstViewController: UIViewController {
     let colorBT = UIColor(rgb: 0x536DFE, alpha: 1.0)
-    @IBOutlet weak var chatButton: UIButton!
-    @IBOutlet weak var firstBT: UIButton!
-    @IBAction func onPressedButton(_ sender: Any) {
+    @IBOutlet private weak var chatButton: UIButton!
+    @IBOutlet private weak var firstBT: UIButton!
+    @IBAction private func onPressedButton(_ sender: Any) {
             guard let viewC = storyboard?.instantiateViewController(identifier: "first") as? ViewController else {
-                // identifier: định danh ViewController
-                // hàm này cho phép xác định và khởi tạo config viewcontroller
                 print("err")
                 return
             }
@@ -16,15 +14,12 @@ class FirstViewController: UIViewController {
             // present(SecondViewController(),animated: true)
         }
     @IBAction func onPressedChatButton(_ sender: Any) {
-            guard let vc4 = storyboard?.instantiateViewController(identifier: "chat") as? View4Controller else {
-                // identifier: định danh ViewController
-                // hàm này cho phép xác định và khởi tạo config viewcontroller
-                print("err")
-                return
-            }
-            vc4.modalPresentationStyle = .fullScreen
-            present(vc4, animated: true)
-            // present(SecondViewController(),animated: true)
+        guard let chatView = storyboard?.instantiateViewController(identifier: "ChatsViewController") as? ChatsViewController else {
+            print("err")
+            return
+        }
+        chatView.modalPresentationStyle = .fullScreen
+        present(chatView, animated: true)
         }
     override func viewDidLoad() {
         super.viewDidLoad()

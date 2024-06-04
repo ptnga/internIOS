@@ -1,6 +1,6 @@
 import UIKit
 
-class View3Controller: UIViewController {
+class OnCallController: UIViewController {
     @IBOutlet weak var view2: UIView!
     @IBOutlet weak var counter: UILabel!
     let colorView = UIColor(rgb: 0x303034, alpha: 1.0)
