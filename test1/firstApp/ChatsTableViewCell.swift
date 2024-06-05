@@ -1,10 +1,3 @@
-//
-//  View4TableViewCell.swift
-//  firstApp
-//
-//  Created by Bunn on 4/6/24.
-//
-
 import UIKit
 
 class ChatsTableViewCell: UITableViewCell {
@@ -53,7 +46,6 @@ class ChatsTableViewCell: UITableViewCell {
     }
     public func set(user: ChatModel) {
         lbBorder.layer.backgroundColor = nil
-        lbBorder.layer.borderColor = colorView.cgColor
         lbBorder.layer.borderWidth = 1
         lbBorder.layer.cornerRadius = lbBorder.frame.height/2
         lbBorder.layer.masksToBounds = true
@@ -71,13 +63,10 @@ class ChatsTableViewCell: UITableViewCell {
         lbDot.layer.cornerRadius = lbDot.frame.height/2
         lbDot.layer.masksToBounds = true
         lbDot.layer.borderWidth = 1
-        lbDot.backgroundColor = UIColor.opaqueSeparator
-        lbDot.layer.borderColor = UIColor.opaqueSeparator.cgColor
         lbDot.sizeToFit()
         textViewContent.text = user.title
         textViewContent.applyKerningLabel(1.3)
         textViewHour.text = formatTimestamp(user.timestamp)
-        labelNotify.layer.isHidden = true
         textViewName.sizeToFit()
         position.sizeToFit()
         if( user.numberNotify>0 ) {
@@ -94,11 +83,20 @@ class ChatsTableViewCell: UITableViewCell {
             labelNotify.layer.masksToBounds = true
             labelNotify.layer.borderWidth = 1
             labelNotify.layer.borderColor = colorNotify.cgColor
+        } else {
+            textViewName.textColor = UIColor.opaqueSeparator
+            position.textColor = UIColor.opaqueSeparator
+            textViewContent.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+            textViewContent.textColor = UIColor.opaqueSeparator
+            lbDot.backgroundColor = UIColor.opaqueSeparator
+            lbDot.layer.borderColor = UIColor.opaqueSeparator.cgColor
+            labelNotify.layer.isHidden = true
         }
         if(user.status == true) {
             lbBorder.layer.borderColor = colorBorder.cgColor
+        } else {
+            lbBorder.layer.borderColor = colorView.cgColor
         }
-
     }
         private func formatTimestamp(_ timestamp: Int) -> String? {
             let date = Date(timeIntervalSince1970: TimeInterval(timestamp))

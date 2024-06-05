@@ -50,13 +50,14 @@ class StartChatTableViewCell: UITableViewCell {
         lbName.textColor = UIColor.white
         lbName.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         lbName.sizeToFit()
-        lbStatus.layer.isHidden = true
         lbStatus.sizeToFit()
         if(user.status == true) {
             lbStatus.layer.isHidden = false
             lbBorder.layer.borderColor = colorBorder.cgColor
             lbStatus.layer.borderColor = UIColor.green.cgColor
             lbStatus.layer.backgroundColor = UIColor.green.cgColor
+        } else {
+            lbStatus.layer.isHidden = true
         }
     }
 
