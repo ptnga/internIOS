@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180619922C16F320002BDCA2 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180619912C16F320002BDCA2 /* LocationModel.swift */; };
+		180619962C16FC93002BDCA2 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 180619952C16FC93002BDCA2 /* locations.json */; };
+		180619982C1805A1002BDCA2 /* uiImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180619972C1805A1002BDCA2 /* uiImage.swift */; };
+		1806199A2C1950FE002BDCA2 /* CustomTabBarMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180619992C1950FE002BDCA2 /* CustomTabBarMapView.swift */; };
+		1806199C2C195288002BDCA2 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806199B2C195288002BDCA2 /* TaskViewController.swift */; };
+		180619A02C1AEE42002BDCA2 /* mkPolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806199F2C1AEE42002BDCA2 /* mkPolyline.swift */; };
+		180619A22C1FDE82002BDCA2 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180619A12C1FDE82002BDCA2 /* CustomNavigationBar.swift */; };
 		180A3F132BF22E4B00593B84 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A3F122BF22E4B00593B84 /* ChatsViewController.swift */; };
 		1828268B2BF31D5A00497A6C /* uiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1828268A2BF31D5A00497A6C /* uiView.swift */; };
 		182826912BF460EF00497A6C /* StartConversationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182826902BF460EF00497A6C /* StartConversationController.swift */; };
@@ -32,6 +39,7 @@
 		18E456C72C0F059000C25854 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E456C62C0F059000C25854 /* ChatModel.swift */; };
 		18E456C92C0F05ED00C25854 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E456C82C0F05ED00C25854 /* UserModel.swift */; };
 		18E456CB2C0F0FBF00C25854 /* ReadFileJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E456CA2C0F0FBF00C25854 /* ReadFileJson.swift */; };
+		18E456CD2C106DC600C25854 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E456CC2C106DC600C25854 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +60,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180619912C16F320002BDCA2 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		180619952C16FC93002BDCA2 /* locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
+		180619972C1805A1002BDCA2 /* uiImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiImage.swift; sourceTree = "<group>"; };
+		180619992C1950FE002BDCA2 /* CustomTabBarMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarMapView.swift; sourceTree = "<group>"; };
+		1806199B2C195288002BDCA2 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		1806199F2C1AEE42002BDCA2 /* mkPolyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mkPolyline.swift; sourceTree = "<group>"; };
+		180619A12C1FDE82002BDCA2 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		180A3F122BF22E4B00593B84 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		1828268A2BF31D5A00497A6C /* uiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiView.swift; sourceTree = "<group>"; };
 		182826902BF460EF00497A6C /* StartConversationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartConversationController.swift; sourceTree = "<group>"; };
@@ -81,6 +96,7 @@
 		18E456C62C0F059000C25854 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		18E456C82C0F05ED00C25854 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		18E456CA2C0F0FBF00C25854 /* ReadFileJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadFileJson.swift; sourceTree = "<group>"; };
+		18E456CC2C106DC600C25854 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +124,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1806199D2C19813A002BDCA2 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				18E456BE2C0EBDA200C25854 /* ChatsTableViewCell.xib */,
+				18E456C22C0ECCBB00C25854 /* StartChatTableViewCell.xib */,
+				18E456C12C0ECCBB00C25854 /* StartChatTableViewCell.swift */,
+				18E456BD2C0EBDA200C25854 /* ChatsTableViewCell.swift */,
+				180619992C1950FE002BDCA2 /* CustomTabBarMapView.swift */,
+				182826902BF460EF00497A6C /* StartConversationController.swift */,
+				1806199B2C195288002BDCA2 /* TaskViewController.swift */,
+				180A3F122BF22E4B00593B84 /* ChatsViewController.swift */,
+				18E456CC2C106DC600C25854 /* MapViewController.swift */,
+				180619A12C1FDE82002BDCA2 /* CustomNavigationBar.swift */,
+				1848F3782BEB798D004827FA /* OnCallController.swift */,
+				18593A0C2BE9E7F100FFDDE1 /* ViewController.swift */,
+				1848F3742BEB6AC7004827FA /* HomeController.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		1806199E2C19817F002BDCA2 /* uiviews */ = {
+			isa = PBXGroup;
+			children = (
+				18547D1F2C058BB80045102D /* uiLabel.swift */,
+				180619972C1805A1002BDCA2 /* uiImage.swift */,
+				1828268A2BF31D5A00497A6C /* uiView.swift */,
+				1848F3762BEB7308004827FA /* uiColor.swift */,
+				1806199F2C1AEE42002BDCA2 /* mkPolyline.swift */,
+			);
+			path = uiviews;
+			sourceTree = "<group>";
+		};
 		185939FC2BE9E7F100FFDDE1 = {
 			isa = PBXGroup;
 			children = (
@@ -131,26 +179,16 @@
 		18593A072BE9E7F100FFDDE1 /* firstApp */ = {
 			isa = PBXGroup;
 			children = (
+				1806199E2C19817F002BDCA2 /* uiviews */,
+				1806199D2C19813A002BDCA2 /* views */,
 				18E456C52C0F056E00C25854 /* models */,
 				18E456B82C0EB57700C25854 /* json */,
 				18593A082BE9E7F100FFDDE1 /* AppDelegate.swift */,
 				18593A0A2BE9E7F100FFDDE1 /* SceneDelegate.swift */,
-				1848F3742BEB6AC7004827FA /* HomeController.swift */,
-				18593A0C2BE9E7F100FFDDE1 /* ViewController.swift */,
-				1848F3782BEB798D004827FA /* OnCallController.swift */,
 				18593A0E2BE9E7F100FFDDE1 /* Main.storyboard */,
-				180A3F122BF22E4B00593B84 /* ChatsViewController.swift */,
-				182826902BF460EF00497A6C /* StartConversationController.swift */,
-				18E456BD2C0EBDA200C25854 /* ChatsTableViewCell.swift */,
-				18E456C12C0ECCBB00C25854 /* StartChatTableViewCell.swift */,
-				18E456C22C0ECCBB00C25854 /* StartChatTableViewCell.xib */,
-				18E456BE2C0EBDA200C25854 /* ChatsTableViewCell.xib */,
 				18593A112BE9E7F300FFDDE1 /* Assets.xcassets */,
 				18593A132BE9E7F300FFDDE1 /* LaunchScreen.storyboard */,
 				18593A162BE9E7F300FFDDE1 /* Info.plist */,
-				1848F3762BEB7308004827FA /* uiColor.swift */,
-				1828268A2BF31D5A00497A6C /* uiView.swift */,
-				18547D1F2C058BB80045102D /* uiLabel.swift */,
 				18E456CA2C0F0FBF00C25854 /* ReadFileJson.swift */,
 			);
 			path = firstApp;
@@ -176,6 +214,7 @@
 		18E456B82C0EB57700C25854 /* json */ = {
 			isa = PBXGroup;
 			children = (
+				180619952C16FC93002BDCA2 /* locations.json */,
 				18E456B92C0EB5A100C25854 /* chat.json */,
 				18E456BA2C0EB5A100C25854 /* users.json */,
 			);
@@ -185,6 +224,7 @@
 		18E456C52C0F056E00C25854 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				180619912C16F320002BDCA2 /* LocationModel.swift */,
 				18E456C62C0F059000C25854 /* ChatModel.swift */,
 				18E456C82C0F05ED00C25854 /* UserModel.swift */,
 			);
@@ -298,6 +338,7 @@
 			files = (
 				18E456C42C0ECCBB00C25854 /* StartChatTableViewCell.xib in Resources */,
 				18E456BC2C0EB5A100C25854 /* users.json in Resources */,
+				180619962C16FC93002BDCA2 /* locations.json in Resources */,
 				18593A122BE9E7F300FFDDE1 /* Assets.xcassets in Resources */,
 				18E456BB2C0EB5A100C25854 /* chat.json in Resources */,
 				18593A152BE9E7F300FFDDE1 /* Base in Resources */,
@@ -359,12 +400,19 @@
 				18547D202C058BB80045102D /* uiLabel.swift in Sources */,
 				180A3F132BF22E4B00593B84 /* ChatsViewController.swift in Sources */,
 				18593A0D2BE9E7F100FFDDE1 /* ViewController.swift in Sources */,
+				180619A02C1AEE42002BDCA2 /* mkPolyline.swift in Sources */,
 				18593A092BE9E7F100FFDDE1 /* AppDelegate.swift in Sources */,
 				18593A0B2BE9E7F100FFDDE1 /* SceneDelegate.swift in Sources */,
+				1806199A2C1950FE002BDCA2 /* CustomTabBarMapView.swift in Sources */,
 				1848F3752BEB6AC7004827FA /* HomeController.swift in Sources */,
 				1848F3792BEB798D004827FA /* OnCallController.swift in Sources */,
 				18E456C92C0F05ED00C25854 /* UserModel.swift in Sources */,
 				1848F3772BEB7308004827FA /* uiColor.swift in Sources */,
+				180619922C16F320002BDCA2 /* LocationModel.swift in Sources */,
+				1806199C2C195288002BDCA2 /* TaskViewController.swift in Sources */,
+				180619A22C1FDE82002BDCA2 /* CustomNavigationBar.swift in Sources */,
+				18E456CD2C106DC600C25854 /* MapViewController.swift in Sources */,
+				180619982C1805A1002BDCA2 /* uiImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

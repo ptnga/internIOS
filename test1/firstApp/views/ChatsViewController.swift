@@ -24,38 +24,15 @@ class ChatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     func setupNavigationBar() {
-        let switchButton = UISwitch()
-        switchButton.isOn = true // Trạng thái mặc định là bật
-        // Thêm switch button vào navigationItem
-        self.navigationItem.titleView = switchButton
-        navigationController?.navigationBar.barTintColor = colorView
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(
-            image: UIImage(named: "menuIcon" ),
-            style: .plain,
-            target: self,
-            action: nil
+        CustomNavigationBar.setupNavigationBar(
+            navigationItem: self.navigationItem,
+            navigationController: self.navigationController,
+            barTintColor: .black,
+            leftButtonImageName: "menuIcon",
+            rightButtonImageName: "plusIcon",
+            leftFrameBT: CGRect(x: 0, y: 0, width: 34, height: 34),
+            rightFrameBT: CGRect(x: 0, y: 0, width: 22, height: 18)
         )
-        let menuButtonView = UIButton(type: .custom)
-        menuButtonView.setImage(UIImage(named: "menuIcon" )?.withRenderingMode( .alwaysOriginal ), for: .normal)
-        //        plusButtonView.imageView?.contentMode = .scaleAspectFill
-        menuButtonView.clipsToBounds = true
-        menuButtonView.contentVerticalAlignment = .fill
-        menuButtonView.contentHorizontalAlignment = .fill
-        menuButtonView.frame = CGRect( x: 0, y: 0, width: 34, height: 34 )
-        let lefttButtonBar = UIBarButtonItem()
-        lefttButtonBar.customView = menuButtonView
-        self.navigationItem.leftBarButtonItem = lefttButtonBar
-        let plusButtonView = UIButton( type: .custom)
-        plusButtonView.setImage( UIImage( named: "plusIcon" )?.withRenderingMode( .alwaysOriginal ), for: .normal )
-        //        plusButtonView.imageView?.contentMode = .scaleAspectFill
-        plusButtonView.clipsToBounds = true
-        plusButtonView.contentVerticalAlignment = .fill
-        plusButtonView.contentHorizontalAlignment = .fill
-        plusButtonView.frame = CGRect( x: 0, y: 0, width: 22, height: 18 )
-        plusButtonView.addTarget(self, action: #selector( self.didTapButton), for: .touchUpInside )
-        let rightButtonBar = UIBarButtonItem()
-        rightButtonBar.customView = plusButtonView
-        self.navigationItem.rightBarButtonItem = rightButtonBar
     }
     func setupTableView() {
         tableView.backgroundColor = colorView

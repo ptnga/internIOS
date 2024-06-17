@@ -1,0 +1,41 @@
+{
+    "data": [
+        {
+            "title": "My Location",
+            "subtitle": " ",
+            "latitude": 21.04333,
+            "longitude": 105.86918
+        },
+        {
+            "title": "Trà Sữa TocoToCo Nguyễn Văn Cừ",
+            "subtitle": "Trà sữa trân châu",
+            "latitude": 21.04377,
+            "longitude": 105.87176
+        },
+        {
+            "title": "Bánh cuốn nóng Phương Lan",
+            "subtitle": "Quán ăn nhỏ",
+            "latitude": 21.04170,
+            "longitude": 105.86928
+        },
+        {
+            "title": "Cửa Hàng Viettel 84 Ngọc Lâm",
+            "subtitle": "Cửa hàng điện thoại di động",
+            "latitude": 21.04546,
+            "longitude": 105.86913
+        },
+        {
+            "title": "Mô Hình Việt",
+            "subtitle": "Quán cà phê",
+            "latitude": 21.04152,
+            "longitude": 105.86685
+        },
+        {
+            "title": "Nhà Nghỉ Phương Huyền",
+            "subtitle": "Trạm nghỉ",
+            "latitude": 21.04363,
+            "longitude": 105.86817
+        }
+    ]
+                
+}
