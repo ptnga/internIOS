@@ -11,10 +11,9 @@ class ChatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         view.backgroundColor = colorView
         setupNavigationBar()
         setupTableView()
-        view.applyKerning(1)
         readJSONFile()
     }
-    @objc private func didTapButton() {
+    @objc func didTapButton() {
         if let viewStartChat = UIStoryboard(
             name: "Main",
             bundle: nil).instantiateViewController(
@@ -25,6 +24,7 @@ class ChatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     func setupNavigationBar() {
         CustomNavigationBar.setupNavigationBar(
+            viewController: self,
             navigationItem: self.navigationItem,
             navigationController: self.navigationController,
             barTintColor: .black,

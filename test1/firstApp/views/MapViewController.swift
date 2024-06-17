@@ -16,6 +16,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     let colorView = UIColor(rgb: 0x303034, alpha: 1.0)
     let colorLine = UIColor(rgb: 0xFFD001, alpha: 1.0)
     
+
     let manager = CLLocationManager()
     var locations: [LocationModel] = []
     
@@ -38,9 +39,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             for index in 0..<locations.count {
                 if(index == locations.count-1) {
                     
-                    pinLocation(location: locations.last!, location2: locations.last!)
+                    pinLocation(location: locations.last!, locationSecond: locations.last! )
                 } else {
-                    pinLocation(location: locations[index], location2: locations[index + 1])
+                    pinLocation(location: locations[index], locationSecond: locations[index + 1])
                 }
             }
         }
@@ -81,17 +82,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             }
         }
     }
-    func pinLocation(location: LocationModel, location2: LocationModel) {
+    func pinLocation(location: LocationModel, locationSecond: LocationModel) {
         let annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
         annotation.title = location.title
         annotation.subtitle = location.subtitle
         mapView.addAnnotation(annotation)
         
-        let annotation2 = MKPointAnnotation()
-        annotation2.coordinate = CLLocationCoordinate2D(latitude: location2.latitude, longitude: location2.longitude)
-        let polyline = ColoredPolyline(coordinates: [annotation.coordinate, annotation2.coordinate], count: 2)
-        if(location.title == "My Location" && location2.title == "Trà Sữa TocoToCo Nguyễn Văn Cừ") {
+        let annotationSecond = MKPointAnnotation()
+        annotationSecond.coordinate = CLLocationCoordinate2D(latitude: locationSecond.latitude, longitude: locationSecond.longitude)
+        let polyline = ColoredPolyline(coordinates: [annotation.coordinate, annotationSecond.coordinate], count: 2)
+        if(location.title == "My Location" && locationSecond.title == "Trà Sữa TocoToCo Nguyễn Văn Cừ") {
             polyline.color = colorLine
         } else {
             polyline.color = .blue
@@ -230,6 +231,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     func setupNavigationBar() {
         CustomNavigationBar.setupNavigationBar(
+            viewController: self,
             navigationItem: self.navigationItem,
             navigationController: self.navigationController,
             barTintColor: .black,

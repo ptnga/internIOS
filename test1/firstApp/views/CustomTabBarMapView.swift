@@ -8,7 +8,7 @@ class CustomTabBarMapView: UITabBarController {
             for (index, item) in items.enumerated() {
                 let mapViewController = MapViewController()
                 var scaledImage: UIImage?
-                if(index==0) {
+                if(index == 0) {
                     scaledImage = mapViewController.resizeImage(image: item.image!, targetSize: CGSize(width: 32, height: 32))
                 } else {
                     scaledImage = mapViewController.resizeImage(image: item.image!, targetSize: CGSize(width: 20.71, height: 22))

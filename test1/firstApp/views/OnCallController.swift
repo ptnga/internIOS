@@ -11,9 +11,7 @@ class OnCallController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = colorView
         startTime = Date()
-        UserDefaults.standard.set(startTime, forKey: "startTime")
         startTimer()
-        // Do any additional setup after loading the view.
     }
     func startTimer() {
             scheduledTimer = Timer.scheduledTimer(

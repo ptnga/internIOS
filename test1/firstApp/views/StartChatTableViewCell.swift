@@ -31,19 +31,13 @@ class StartChatTableViewCell: UITableViewCell {
     public func set( user: UserModel ) {
         lbBorder.layer.backgroundColor = nil
         lbBorder.layer.borderColor = colorView.cgColor
-        lbBorder.layer.borderWidth = 1
-        lbBorder.layer.cornerRadius = lbBorder.frame.height/2
-        lbBorder.layer.masksToBounds = true
+        customBorder(label: lbBorder)
         lbImage.text = user.nameImage
         lbImage.applyKerningLabel(1.3)
-        lbImage.layer.cornerRadius = lbImage.frame.height/2
-        lbImage.layer.masksToBounds = true
-        lbImage.layer.borderWidth = 1
+        customBorder(label: lbImage)
         lbImage.layer.backgroundColor = colorBackgroundImage.cgColor
         lbImage.layer.borderColor = colorView.cgColor
-        lbStatus.layer.cornerRadius = lbStatus.frame.height/2
-        lbStatus.layer.masksToBounds = true
-        lbStatus.layer.borderWidth = 1
+        customBorder(label: lbStatus)
         lbStatus.layer.borderColor = colorView.cgColor
         lbName.text = user.username
         lbName.applyKerningLabel(1.3)
@@ -59,6 +53,11 @@ class StartChatTableViewCell: UITableViewCell {
         } else {
             lbStatus.layer.isHidden = true
         }
+    }
+    func customBorder(label: UILabel){
+        label.layer.cornerRadius = label.frame.height/2
+        label.layer.masksToBounds = true
+        label.layer.borderWidth = 1
     }
 
 }

@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 class CustomNavigationBar {
     static func setupNavigationBar(
+        viewController: UIViewController,
         navigationItem: UINavigationItem,
         navigationController: UINavigationController?,
         barTintColor: UIColor,
@@ -38,5 +39,12 @@ class CustomNavigationBar {
         let rightButtonBar = UIBarButtonItem()
         rightButtonBar.customView = mapButtonView
         navigationItem.rightBarButtonItem = rightButtonBar
+        if(leftButtonImageName == "menuIcon" &&
+           rightButtonImageName == "plusIcon") {
+            let chatView = ChatsViewController()
+            mapButtonView.addTarget(viewController,
+                                     action: #selector(chatView.didTapButton),
+                                     for: .touchUpInside)
+        }
     }
 }

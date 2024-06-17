@@ -46,23 +46,17 @@ class ChatsTableViewCell: UITableViewCell {
     }
     public func set(user: ChatModel) {
         lbBorder.layer.backgroundColor = nil
-        lbBorder.layer.borderWidth = 1
-        lbBorder.layer.cornerRadius = lbBorder.frame.height/2
-        lbBorder.layer.masksToBounds = true
+        customBorder(label: lbBorder)
         imageName.text = user.nameImage
         imageName.applyKerningLabel(1.3)
-        imageName.layer.cornerRadius = imageName.frame.height/2
-        imageName.layer.masksToBounds = true
-        imageName.layer.borderWidth = 1
+        customBorder(label: imageName)
         imageName.layer.backgroundColor = colorBackgroundImage.cgColor
         imageName.layer.borderColor = colorView.cgColor
         textViewName.text = user.username
         textViewName.applyKerningLabel(1.3)
         position.text = user.position
         position.applyKerningLabel(1.3)
-        lbDot.layer.cornerRadius = lbDot.frame.height/2
-        lbDot.layer.masksToBounds = true
-        lbDot.layer.borderWidth = 1
+        customBorder(label: lbDot)
         lbDot.sizeToFit()
         textViewContent.text = user.title
         textViewContent.applyKerningLabel(1.3)
@@ -79,9 +73,7 @@ class ChatsTableViewCell: UITableViewCell {
             labelNotify.layer.isHidden = false
             labelNotify.backgroundColor = colorNotify
             labelNotify.text = "\(user.numberNotify)"
-            labelNotify.layer.cornerRadius = labelNotify.frame.height/2
-            labelNotify.layer.masksToBounds = true
-            labelNotify.layer.borderWidth = 1
+            customBorder(label: labelNotify)
             labelNotify.layer.borderColor = colorNotify.cgColor
         } else {
             textViewName.textColor = UIColor.opaqueSeparator
@@ -106,5 +98,10 @@ class ChatsTableViewCell: UITableViewCell {
             dateFormatter.pmSymbol = "PM"
             return dateFormatter.string(from: date)
         }
+    func customBorder(label: UILabel){
+        label.layer.cornerRadius = label.frame.height/2
+        label.layer.masksToBounds = true
+        label.layer.borderWidth = 1
+    }
     
 }
