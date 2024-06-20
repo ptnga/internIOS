@@ -29,16 +29,29 @@ class StartChatTableViewCell: UITableViewCell {
         ])
     }
     public func set( user: UserModel ) {
-        lbBorder.layer.backgroundColor = nil
-        lbBorder.layer.borderColor = colorView.cgColor
-        customBorder(label: lbBorder)
+        let customLB = CustomLabel()
+        customLB.customLabel(
+            label: lbBorder,
+            cornerRadius: lbBorder.frame.height/2,
+            borderWidth: 1,
+            borderColor: colorView.cgColor
+        )
         lbImage.text = user.nameImage
         lbImage.applyKerningLabel(1.3)
-        customBorder(label: lbImage)
-        lbImage.layer.backgroundColor = colorBackgroundImage.cgColor
-        lbImage.layer.borderColor = colorView.cgColor
-        customBorder(label: lbStatus)
-        lbStatus.layer.borderColor = colorView.cgColor
+        customLB.customLabel(
+            label: lbImage,
+            cornerRadius: lbImage.frame.height/2,
+            borderWidth: 1,
+            borderColor: colorView.cgColor,
+            borderBackgroundColor: colorBackgroundImage
+        )
+        customLB.customLabel(
+            label: lbStatus,
+            cornerRadius: lbStatus.frame.height/2,
+            borderWidth: 1,
+            borderColor: colorView.cgColor
+        )
+        
         lbName.text = user.username
         lbName.applyKerningLabel(1.3)
         lbName.textColor = UIColor.white
@@ -53,11 +66,6 @@ class StartChatTableViewCell: UITableViewCell {
         } else {
             lbStatus.layer.isHidden = true
         }
-    }
-    func customBorder(label: UILabel){
-        label.layer.cornerRadius = label.frame.height/2
-        label.layer.masksToBounds = true
-        label.layer.borderWidth = 1
     }
 
 }

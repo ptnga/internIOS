@@ -11,10 +11,10 @@
 		180619962C16FC93002BDCA2 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 180619952C16FC93002BDCA2 /* locations.json */; };
 		180619982C1805A1002BDCA2 /* ExtensionImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180619972C1805A1002BDCA2 /* ExtensionImage.swift */; };
 		1806199A2C1950FE002BDCA2 /* CustomTabBarMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180619992C1950FE002BDCA2 /* CustomTabBarMapView.swift */; };
-		1806199C2C195288002BDCA2 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806199B2C195288002BDCA2 /* TaskViewController.swift */; };
 		180619A22C1FDE82002BDCA2 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180619A12C1FDE82002BDCA2 /* CustomNavigationBar.swift */; };
 		180619A42C20175A002BDCA2 /* ExtensionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180619A32C20175A002BDCA2 /* ExtensionTextView.swift */; };
 		180619A82C201934002BDCA2 /* ColoredPolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180619A72C201934002BDCA2 /* ColoredPolyline.swift */; };
+		180619AB2C20349C002BDCA2 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180619AA2C20349C002BDCA2 /* CustomLabel.swift */; };
 		180A3F132BF22E4B00593B84 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A3F122BF22E4B00593B84 /* ChatsViewController.swift */; };
 		1828268B2BF31D5A00497A6C /* ExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1828268A2BF31D5A00497A6C /* ExtensionView.swift */; };
 		182826912BF460EF00497A6C /* StartConversationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182826902BF460EF00497A6C /* StartConversationController.swift */; };
@@ -65,10 +65,10 @@
 		180619952C16FC93002BDCA2 /* locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
 		180619972C1805A1002BDCA2 /* ExtensionImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionImage.swift; sourceTree = "<group>"; };
 		180619992C1950FE002BDCA2 /* CustomTabBarMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarMapView.swift; sourceTree = "<group>"; };
-		1806199B2C195288002BDCA2 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		180619A12C1FDE82002BDCA2 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		180619A32C20175A002BDCA2 /* ExtensionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTextView.swift; sourceTree = "<group>"; };
 		180619A72C201934002BDCA2 /* ColoredPolyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredPolyline.swift; sourceTree = "<group>"; };
+		180619AA2C20349C002BDCA2 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		180A3F122BF22E4B00593B84 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		1828268A2BF31D5A00497A6C /* ExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionView.swift; sourceTree = "<group>"; };
 		182826902BF460EF00497A6C /* StartConversationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartConversationController.swift; sourceTree = "<group>"; };
@@ -129,13 +129,8 @@
 		1806199D2C19813A002BDCA2 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				18E456BE2C0EBDA200C25854 /* ChatsTableViewCell.xib */,
-				18E456C22C0ECCBB00C25854 /* StartChatTableViewCell.xib */,
-				18E456C12C0ECCBB00C25854 /* StartChatTableViewCell.swift */,
-				18E456BD2C0EBDA200C25854 /* ChatsTableViewCell.swift */,
 				180619992C1950FE002BDCA2 /* CustomTabBarMapView.swift */,
 				182826902BF460EF00497A6C /* StartConversationController.swift */,
-				1806199B2C195288002BDCA2 /* TaskViewController.swift */,
 				180A3F122BF22E4B00593B84 /* ChatsViewController.swift */,
 				18E456CC2C106DC600C25854 /* MapViewController.swift */,
 				180619A12C1FDE82002BDCA2 /* CustomNavigationBar.swift */,
@@ -157,6 +152,18 @@
 				180619A72C201934002BDCA2 /* ColoredPolyline.swift */,
 			);
 			path = ExtensionUIs;
+			sourceTree = "<group>";
+		};
+		180619A92C202B91002BDCA2 /* xibs */ = {
+			isa = PBXGroup;
+			children = (
+				18E456BE2C0EBDA200C25854 /* ChatsTableViewCell.xib */,
+				18E456C22C0ECCBB00C25854 /* StartChatTableViewCell.xib */,
+				18E456C12C0ECCBB00C25854 /* StartChatTableViewCell.swift */,
+				18E456BD2C0EBDA200C25854 /* ChatsTableViewCell.swift */,
+				180619AA2C20349C002BDCA2 /* CustomLabel.swift */,
+			);
+			path = xibs;
 			sourceTree = "<group>";
 		};
 		185939FC2BE9E7F100FFDDE1 = {
@@ -182,6 +189,7 @@
 		18593A072BE9E7F100FFDDE1 /* firstApp */ = {
 			isa = PBXGroup;
 			children = (
+				180619A92C202B91002BDCA2 /* xibs */,
 				1806199E2C19817F002BDCA2 /* ExtensionUIs */,
 				1806199D2C19813A002BDCA2 /* views */,
 				18E456C52C0F056E00C25854 /* models */,
@@ -401,6 +409,7 @@
 				18E456C72C0F059000C25854 /* ChatModel.swift in Sources */,
 				182826912BF460EF00497A6C /* StartConversationController.swift in Sources */,
 				18547D202C058BB80045102D /* ExtensionLabel.swift in Sources */,
+				180619AB2C20349C002BDCA2 /* CustomLabel.swift in Sources */,
 				180A3F132BF22E4B00593B84 /* ChatsViewController.swift in Sources */,
 				18593A0D2BE9E7F100FFDDE1 /* ViewController.swift in Sources */,
 				180619A42C20175A002BDCA2 /* ExtensionTextView.swift in Sources */,
@@ -412,7 +421,6 @@
 				18E456C92C0F05ED00C25854 /* UserModel.swift in Sources */,
 				1848F3772BEB7308004827FA /* ExtensionColor.swift in Sources */,
 				180619922C16F320002BDCA2 /* LocationModel.swift in Sources */,
-				1806199C2C195288002BDCA2 /* TaskViewController.swift in Sources */,
 				180619A82C201934002BDCA2 /* ColoredPolyline.swift in Sources */,
 				180619A22C1FDE82002BDCA2 /* CustomNavigationBar.swift in Sources */,
 				18E456CD2C106DC600C25854 /* MapViewController.swift in Sources */,

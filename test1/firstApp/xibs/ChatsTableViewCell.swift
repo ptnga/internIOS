@@ -45,18 +45,30 @@ class ChatsTableViewCell: UITableViewCell {
         ])
     }
     public func set(user: ChatModel) {
+        let customLB = CustomLabel()
         lbBorder.layer.backgroundColor = nil
-        customBorder(label: lbBorder)
+        customLB.customLabel(
+            label: lbBorder,
+            cornerRadius: lbBorder.frame.height/2,
+            borderWidth: 1)
         imageName.text = user.nameImage
         imageName.applyKerningLabel(1.3)
-        customBorder(label: imageName)
-        imageName.layer.backgroundColor = colorBackgroundImage.cgColor
-        imageName.layer.borderColor = colorView.cgColor
+        customLB.customLabel(
+            label: imageName,
+            cornerRadius: imageName.frame.height/2,
+            borderWidth: 1, 
+            borderColor: colorView.cgColor,
+            borderBackgroundColor: colorBackgroundImage
+        )
         textViewName.text = user.username
         textViewName.applyKerningLabel(1.3)
         position.text = user.position
         position.applyKerningLabel(1.3)
-        customBorder(label: lbDot)
+        customLB.customLabel(
+            label: lbDot,
+            cornerRadius: lbDot.frame.height/2,
+            borderWidth: 1
+        )
         lbDot.sizeToFit()
         textViewContent.text = user.title
         textViewContent.applyKerningLabel(1.3)
@@ -71,10 +83,14 @@ class ChatsTableViewCell: UITableViewCell {
             lbDot.backgroundColor = UIColor.white
             lbDot.layer.borderColor = UIColor.white.cgColor
             labelNotify.layer.isHidden = false
-            labelNotify.backgroundColor = colorNotify
             labelNotify.text = "\(user.numberNotify)"
-            customBorder(label: labelNotify)
-            labelNotify.layer.borderColor = colorNotify.cgColor
+            customLB.customLabel(
+                label: labelNotify,
+                cornerRadius: labelNotify.frame.height/2,
+                borderWidth: 1,
+                borderColor: colorNotify.cgColor,
+                borderBackgroundColor: colorNotify
+            )
         } else {
             textViewName.textColor = UIColor.opaqueSeparator
             position.textColor = UIColor.opaqueSeparator
@@ -98,10 +114,4 @@ class ChatsTableViewCell: UITableViewCell {
             dateFormatter.pmSymbol = "PM"
             return dateFormatter.string(from: date)
         }
-    func customBorder(label: UILabel){
-        label.layer.cornerRadius = label.frame.height/2
-        label.layer.masksToBounds = true
-        label.layer.borderWidth = 1
-    }
-    
 }
