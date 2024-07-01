@@ -1,0 +1,27 @@
+{
+    "data": [
+        {
+            "paymet": "COD",
+            "itemEight": "eight ounce Kali King Kush Aeroponicrerere",
+            "noteEight": "^ From Customer: Please seperate bags by the eighth. You can call me as... More",
+            "itemSwerve": "Swerve Confections & Melt - Buzz Bars & Bites Snack 100mg",
+            "reward": "Reward | Swerve Confections & Melt - Buzz Bars & Bite Snack",
+            "subtotal": 12.54,
+            "taxes": 1.94,
+            "delivery": 5.00,
+            "promo": 0.00,
+            "discounts": 2.99,
+            "tip": 2.00,
+            "total": 60.00,
+            "custompay": 80.00,
+            "change": 20.00,
+            "dropoff": "Deliver to my door",
+            "deliveryNote": "Buzz #5 apt",
+            "youNote": "There's going to be 20min delay for the address change",
+            "timeYouNote": 1719209820,
+            "dispatchNote": "Ashley, the customer called made an addres change to 329 Stan St, 90329",
+            "timeDispatchNote": 1719209820,
+            "customerDocument": "customerDoc.img",
+        }
+    ]
+}
